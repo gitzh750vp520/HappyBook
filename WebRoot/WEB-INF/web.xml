@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  
+  
+  <filter>
+  	<filter-name>CharaceterEncodingFilter</filter-name>
+  	<filter-class>com.t29.happybook.web.filter.CharaceterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>	
+  </filter>
+  <filter>
+  	<filter-name>AdminValidationFilter</filter-name>
+  	<filter-class>com.t29.happybook.web.filter.AdminValidationFilter</filter-class>  	
+  	<init-param>
+  		<param-name>noNeedValidationURIs</param-name>
+  		<param-value>
+  			/hb/mgr/admin/loginForm,
+  			/hb/mgr/admin/loginCheck
+  		</param-value>
+  	</init-param>	
+  </filter>
+  
+  
+  <filter-mapping>
+  	<filter-name>CharaceterEncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>AdminValidationFilter</filter-name>
+  	<url-pattern>/mgr/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>AdminAction</servlet-name>
+    <servlet-class>com.t29.happybook.web.action.mgr.AdminAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BookAction</servlet-name>
+    <servlet-class>com.t29.happybook.web.action.mgr.BookAction</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CategoryAction</servlet-name>
+    <servlet-class>com.t29.happybook.web.action.mgr.CategoryAction</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>AdminAction</servlet-name>
+    <url-pattern>/mgr/admin/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookAction</servlet-name>
+    <url-pattern>/mgr/book/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CategoryAction</servlet-name>
+    <url-pattern>/mgr/category/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  <listener>
+  	<listener-class>com.t29.happybook.web.listener.UserSessionListener</listener-class>
+  </listener>  
+  
+  
+</web-app>

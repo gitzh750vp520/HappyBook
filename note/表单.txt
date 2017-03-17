@@ -1,0 +1,29 @@
+表单标签：form
+
+
+
+表单元素（12种）
+
+1、文本框：<input type="text" />
+
+2、密码框：<input type="password" />
+
+3、单选按钮：<input type="radio" />
+
+4、复选框：<input type="checkbox" />
+
+5、文件域：<input type="file" />
+
+6、隐藏表单域：<input type="hidden" />
+
+7、提交按钮：<input type="submit" />
+
+8、重置按钮：<input type="reset" />
+
+9、普通按钮：<input type="button" />
+
+10、图片提交按钮：<input type="image" src="" />
+
+11、下拉选择框：<select> <option></option> </select>
+
+12、文本域：<textarea></textarea>

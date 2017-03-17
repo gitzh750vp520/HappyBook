@@ -1,0 +1,15 @@
+request对象代表从客户端浏览器到服务器的一次请求过程。（地址栏输入url，刷新地址栏，超链接跳转，表单提交）
+
+
+request对象的方法：
+
+（1）设置请求字符编码：			request.setCharaceterEncoding("UTF-8");
+
+（2）获取请求参数：				String param = request.getParameter("paramName");
+
+（3）获取请求转发器，并转发		request.getRequestDispatcher("category-mgr.jsp").forward(request, response);
+
+（4）向请求对象中设置属性		request.setAttribute("attrName", attrValue);
+
+（5）从请求对象中获取属性		Object attrValue = request.getAttribute("attrName");
+

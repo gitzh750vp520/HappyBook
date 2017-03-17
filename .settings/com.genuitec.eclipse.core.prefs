@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/js/jquery/jquery.validate.js,WebRoot/js/jquery/messages_zh.js,WebRoot/js/jquery/jquery-ui.js,WebRoot/js/jquery/jquery.js,WebRoot/js/jquery/ajaxfileupload.js,WebRoot/js/jquery/jquery-ui.css
+validator.Revalidate=true
+validator.Unchecked=

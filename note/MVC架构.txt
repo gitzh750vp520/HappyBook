@@ -1,0 +1,9 @@
+M（Model）：模型		——	src中的service、dao、entity
+
+V（View）：视图		——	JSP
+view只负责展示数据和收集数据
+
+C（Controller）：控制器	——	doXXX.jsp
+
+
+所有Browser发送的请求都应该定向到Controller，不应该直接去View（有可能没有权限去、有可能要先做一些处理……）
