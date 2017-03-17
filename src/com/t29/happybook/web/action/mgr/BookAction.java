@@ -110,7 +110,7 @@ public class BookAction extends HttpServlet {
 		if(!file.getFileName().equals("")) {
 			// 必须是图片（文件后缀必须是gif或者jpg或者png的）
 			if( !file.getFileExt().equals("gif") && !file.getFileExt().equals("jpg") &&  !file.getFileExt().equals("png")){			
-				out.write("error#图书信息保存失败：图书图片必需是图片格式！");
+				out.write("error#图书信息保存失败：图书的图片必需是图片格式！");
 				out.flush();
 				out.close();
 				return;

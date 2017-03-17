@@ -10,7 +10,7 @@ public class BookDao extends BaseDao {
 	
 	/* 查询所有图书信息的方法，返回一个封装了所有图书信息的泛型列表 */
 	public List<Book> getAllBooks() {
-		List<Book> list = new ArrayList<Book>();		
+		List<Book> list = new ArrayList<Book>();
 		try {
 			open();
 			String sqlSelect = "select BID, BTitle, BAuthor, BPrice, BPublisher, BPhoto, CID, CName from BookInfo left join CategoryInfo on (BCategoryID = CID)";
