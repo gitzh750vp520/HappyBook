@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -27,6 +28,14 @@ public class BookAction extends HttpServlet {
 
 	private BookService bookService = new BookService();
 	private CategoryService categoryService = new CategoryService();
+	@Override
+	public void init() throws ServletException {
+		System.out.println("===================servlet初始化了====================");
+	}
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("===================servlet初始化了config====================");
+	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -94,6 +103,7 @@ public class BookAction extends HttpServlet {
 		
 		SmartUpload su = new SmartUpload();
 		su.initialize(this.getServletConfig(), request, response);
+		
 		try {
 			su.upload();
 		} catch (SmartUploadException e) {
@@ -104,9 +114,10 @@ public class BookAction extends HttpServlet {
 			return;
 		}
 		
+		
 		String photo = "default.jpg";
 			
-		File file = su.getFiles().getFile(0);	
+		File file = su.getFiles().getFile(0);
 		if(!file.getFileName().equals("")) {
 			// 必须是图片（文件后缀必须是gif或者jpg或者png的）
 			if( !file.getFileExt().equals("gif") && !file.getFileExt().equals("jpg") &&  !file.getFileExt().equals("png")){			

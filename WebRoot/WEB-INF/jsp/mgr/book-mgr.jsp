@@ -5,7 +5,7 @@
   <head>
     <title>图书网后台管理系统</title>
     <link type="text/css" rel="stylesheet" href="/hb/css/mgr.css"/>
-	<link rel="stylesheet" type="text/css" href="/hb/js/jquery/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/hb/js/jquery/jquery-ui.css" />
 	<script type="text/javascript" src="/hb/js/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/hb/js/jquery/jquery-ui.js"></script>
 	<script type="text/javascript" src="/hb/js/jquery/jquery.validate.js"></script>
@@ -84,7 +84,8 @@ function addBook(){
 		},
 		"error" : function(data, status, e) {
 			alert(e);
-		}
+		},
+		
 	});
 }
 
